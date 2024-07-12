@@ -1,0 +1,108 @@
+body {
+    font-family: 'Kanit', sans-serif;
+    background-image: url('background.webp');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Ensures no scrollbars */
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px); /* Adds blur effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Soft shadow */
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+header img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+header h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Spacing between letters */
+}
+
+main {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Stronger shadow */
+}
+
+.server-info, .status {
+    margin-bottom: 20px;
+}
+
+.server-info h2, .status h2 {
+    font-size: 2.5rem; /* Larger heading */
+    margin-bottom: 15px;
+}
+
+.status p {
+    font-size: 1.8rem; /* Larger text */
+    line-height: 1.6; /* Improved readability */
+    margin-bottom: 10px;
+    color: #cccccc; /* Lighter text color */
+}
+
+.server-ip {
+    cursor: pointer;
+    color: #ffffff;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+}
+
+.server-ip::after {
+    content: '\f0ea'; /* Unicode for copy icon */
+    font-family: FontAwesome; /* Using Font Awesome for icons */
+    margin-left: 5px;
+}
+
+.notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: none; /* Initially hidden */
+    z-index: 9999;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    0% { transform: translateX(-50%) translateY(100%); }
+    100% { transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes slideOut {
+    0% { transform: translateX(-50%) translateY(0); }
+    100% { transform: translateX(-50%) translateY(100%); }
+}
